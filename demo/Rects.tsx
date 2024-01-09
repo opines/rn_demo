@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 
 const CirclesDemo = () => {
-  const demosData = [
+  const circlesData = [
     { cx: 30, cy: 30, r: 20, stroke: 'black', strokeWidth: 2, fill: 'red' },
     { cx: 0, cy: 0, r: 30, stroke: 'green', strokeWidth: 3, fill: 'blue' },
     { cx: 80, cy: 60, r: 30, stroke: 'blue', strokeWidth: 1.5, fill: 'yellow' },
@@ -11,18 +11,18 @@ const CirclesDemo = () => {
     { cx: -10, cy: 0, r: 50, stroke: 'green', strokeWidth: 3, fill: 'none' },
   ];
 
-  const demos = demosData.map((data, index) => (
+  const circles = circlesData.map((circle, index) => (
     <View>
-      <Text>{JSON.stringify(data)}</Text>
+      <Text>{JSON.stringify(circle)}</Text>
       <Svg height="120" width="120">
         <Circle
           key={'Circle' + index}
-          cx={data.cx}
-          cy={data.cy}
-          r={data.r}
-          stroke={data.stroke}
-          strokeWidth={data.strokeWidth}
-          fill={data.fill}
+          cx={circle.cx}
+          cy={circle.cy}
+          r={circle.r}
+          stroke={circle.stroke}
+          strokeWidth={circle.strokeWidth}
+          fill={circle.fill}
         />
       </Svg>
     </View>
@@ -30,7 +30,7 @@ const CirclesDemo = () => {
 
   return (
     <ScrollView style={styles.container}>
-      {demos}
+      {circles}
     </ScrollView>
   );
 };
